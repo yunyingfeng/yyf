@@ -1,0 +1,3 @@
+function showMessage() {
+    alert("你好！这是一个 JavaScript 示例~");
+}

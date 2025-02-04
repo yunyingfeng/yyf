@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#home">主页</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <section id="home">
+            <h1>欢迎来到我的网站！</h1>
+            <p>这是我的 GitHub Pages 示例网站。</p>
+            <button onclick="showMessage()">点我试试</button>
+        </section>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <p>我是一名开发者，正在学习使用 GitHub Pages。</p>
+        </section>
+
+        <section id="contact">
+            <h2>联系我</h2>
+            <p>邮箱：o003@msn.com</p>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 云影风. 由 GitHub Pages 驱动</p>
+    </footer>
+
+    <!-- 引入 JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
