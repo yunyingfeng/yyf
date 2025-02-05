@@ -1,75 +1,188 @@
-/* 基础样式 */
+:root {
+    --ink-black: #2c2c2c;
+    --mist-blue: #a3b6c5;
+    --paper-white: #f8f5f0;
+    --gold-accent: #c2a661;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background: url('../img/bg-texture.png') var(--paper-white);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.8;
+    color: var(--ink-black);
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
-/* 导航栏 */
-nav {
-    background-color: #333;
-    padding: 1rem;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
+    min-height: 100vh;
     display: flex;
-    gap: 2rem;
-    justify-content: center;
+    flex-direction: column;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.ink-decoration {
+    height: 12px;
+    background: url('../img/ink-splash.png') repeat-x;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
-nav a:hover {
-    color: #4CAF50;
-}
+.ink-decoration.top { top: 0; }
+.ink-decoration.bottom { bottom: 0; }
 
-/* 主要内容区 */
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-section {
-    margin-bottom: 2rem;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* 页脚 */
-footer {
+.site-header {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    padding: 4rem 2rem;
+    position: relative;
 }
 
-/* 响应式设计 */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+.blog-title {
+    font-size: 3.5rem;
+    color: var(--ink-black);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 4px;
+}
+
+.main-nav {
+    margin-top: 2rem;
+}
+
+.nav-link {
+    color: var(--ink-black);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex: 1;
+}
+
+.post-preview {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+.post-date {
+    display: block;
+    color: var(--mist-blue);
+    font-size: 0.9em;
+}
+
+.post-title a {
+    color: var(--ink-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: var(--gold-accent);
+}
+
+.ink-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--mist-blue), transparent);
+    margin: 2rem 0;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--mist-blue);
+    background: rgba(255,255,255,0.9);
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-link {
+        display: block;
+        margin: 1rem 0;
+    }
+}
+
+/* 山水头图样式 */
+.landscape-header {
+    position: relative;
+    height: 70vh;
+    background: linear-gradient(rgba(44,44,44,0.2), rgba(242,242,242,0.1)),
+                url('../img/mountain-bg.jpg') center/cover;
+    margin-bottom: 4rem;
+}
+
+.mountain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(15deg, 
+        rgba(163,182,197,0.3) 0%,
+        rgba(242,242,242,0.1) 50%,
+        rgba(194,166,97,0.2) 100%);
+}
+
+/* 导航栏适配新背景 */
+.site-header {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 2rem;
+}
+
+/* 联系方式样式 */
+.contact-link {
+    color: var(--mist-blue);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.contact-link::before {
+    content: '✉️';
+    margin-right: 0.5em;
+    opacity: 0.8;
+}
+
+.contact-link:hover {
+    color: var(--gold-accent);
+    text-decoration: underline;
+}
+
+/* 导航栏响应式优化 */
+@media (max-width: 768px) {
+    .landscape-header {
+        height: 50vh;
+    }
+    
+    .site-header {
+        bottom: 10%;
+        padding: 1rem;
     }
 }

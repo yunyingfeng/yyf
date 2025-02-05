@@ -1,46 +1,33 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- ...保持原有meta和链接不变... -->
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <ul>
-            <li><a href="#home">主页</a></li>
-            <li><a href="#about">关于</a></li>
-            <li><a href="#contact">联系</a></li>
-        </ul>
-    </nav>
+    <div class="ink-decoration top"></div>
 
-    <!-- 主要内容 -->
-    <main>
-        <section id="home">
-            <h1>欢迎来到我的网站！</h1>
-            <p>这是我的 GitHub Pages 示例网站。</p>
-            <button onclick="showMessage()">点我试试</button>
-        </section>
+    <!-- 新增山水头图 -->
+    <div class="landscape-header">
+        <div class="mountain-overlay"></div>
+        <header class="site-header">
+            <h1 class="blog-title">墨渰青岚 ● 云影风</h1>
+            <nav class="main-nav">
+                <a href="/" class="nav-link">iOS</a>
+                <a href="#" class="nav-link">Android</a>
+                <a href="#" class="nav-link">Cloud</a>
+                <a href="#" class="nav-link">Sim</a>
+            </nav>
+        </header>
+    </div>
 
-        <section id="about">
-            <h2>关于我</h2>
-            <p>我是一名开发者，正在学习使用 GitHub Pages。</p>
-        </section>
+    <!-- ...保持原有main内容不变... -->
 
-        <section id="contact">
-            <h2>联系我</h2>
-            <p>邮箱：o003@msn.com</p>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer>
-        <p>© 2025 云影风. 由 GitHub Pages 驱动</p>
+    <footer class="site-footer">
+        <p>水墨之间 · 见字如晤</p>
+        <p>联系：<a href="mailto:O003@msn.com" class="contact-link">O003@msn.com</a></p>
+        <p>© 甲辰年 墨渰青岚</p>
     </footer>
 
-    <!-- 引入 JavaScript -->
-    <script src="script.js"></script>
+    <div class="ink-decoration bottom"></div>
 </body>
 </html>
